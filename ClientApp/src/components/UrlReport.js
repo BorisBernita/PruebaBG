@@ -21,7 +21,8 @@ export class UrlReport extends Component {
           <tr>
             <th>Id</th>
             <th>URL Base</th>
-            <th>URL Corta</th>
+                    <th>URL Corta</th>
+                    <th>IP</th>
             <th>Fecha</th>
           </tr>
         </thead>
@@ -31,6 +32,7 @@ export class UrlReport extends Component {
                   <td>{url.id}</td>
                         <td>{url.longUrl}</td>
                         <td><a href={url.longUrl} target="_blank">http://{url.segment}</a></td>
+                        <td>{ url.ip }</td>
                         <td>{new Intl.DateTimeFormat('es-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(new Date(url.added))}</td>
             </tr>
           )}
